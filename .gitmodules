@@ -1,12 +1,15 @@
-[submodule "nvim-conf"]
-	path = .config/nvim
-	url = git@gitlab.com:lutzgebelman/nvim-conf
 [submodule ".config/hypr"]
 	path = .config/hypr
-	url = git@gitlab.com:lutzgebelman/hypr-conf
+	url = /home/cockroach/git/nvim-conf/hypr-conf
 [submodule ".config/kitty"]
 	path = .config/kitty
-	url = git@gitlab.com:lutzgebelman/kitty-conf
+	url = /home/cockroach/git/nvim-conf/kitty-conf
 [submodule ".mozilla/firefox"]
 	path = .mozilla/firefox
-	url = git@gitlab.com:lutzgebelman/firefox-conf
+	url = /home/cockroach/git/nvim-conf/firefox-conf
+[submodule "nvim-conf"]
+	path = nvim-conf
+	url = /home/cockroach/git/nvim-conf
+[submodule ".config/nvim"]
+	path = .config/nvim
+	url = /home/cockroach/git/nvim-conf
