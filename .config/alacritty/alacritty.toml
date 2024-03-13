@@ -1,0 +1,49 @@
+[font]
+size = 11.0
+
+[font.bold]
+family = "Roboto Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "Roboto Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "Roboto Mono"
+style = "Italic"
+
+[font.normal]
+family = "Roboto Mono"
+style = "Medium"
+
+# Default colors
+[colors.primary]
+background = '#181818'
+foreground = '#dddddd'
+
+[colors.cursor]
+text = '#111111'
+cursor = '#cccccc'
+
+# Normal colors
+[colors.normal]
+black   = '#000000'
+red     = '#bb0000'
+green   = '#00a000'
+yellow  = '#cccc00'
+blue    = '#5555ff'
+magenta = '#c000c0'
+cyan    = '#00bbbb'
+white   = '#d0d0d0'
+
+# Bright colors
+[colors.bright]
+black   = '#545454'
+red     = '#f00000'
+green   = '#00f000'
+yellow  = '#f0f000'
+blue    = '#3333ff'
+magenta = '#ff00ff'
+cyan    = '#6ae3f9'
+white   = '#ffffff'
