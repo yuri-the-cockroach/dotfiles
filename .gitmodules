@@ -13,3 +13,6 @@
 [submodule ".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
 	path = .oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule ".doom.d"]
+	path = .doom.d
+	url = /home/cockroach/git/doom-emacs
