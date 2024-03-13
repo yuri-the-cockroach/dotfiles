@@ -1,9 +1,6 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = /home/cockroach/git/nvim-conf
-[submodule ".config/kitty"]
-	path = .config/kitty
-	url = /home/cockroach/git/kitty-conf
 [submodule ".config/hypr"]
 	path = .config/hypr
 	url = /home/cockroach/git/hypr-conf
