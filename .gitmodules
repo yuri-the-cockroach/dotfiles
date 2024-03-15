@@ -1,12 +1,12 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
-	url = /home/cockroach/git/nvim-conf
+	url = git@gitlab.com:LutzGebelman/nvim-conf.git
 [submodule ".config/hypr"]
 	path = .config/hypr
-	url = /home/cockroach/git/hypr-conf
+	url = git@gitlab.com:LutzGebelman/hypr-conf.git
 [submodule ".mozilla/firefox"]
 	path = .mozilla/firefox
-	url = /home/cockroach/git/firefox-conf
+	url = git@gitlab.com:LutzGebelman/firefox-conf.git
 [submodule ".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
 	path = .oh-my-zsh/custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
@@ -15,4 +15,4 @@
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule ".doom.d"]
 	path = .doom.d
-	url = /home/cockroach/git/doom-emacs
+	url = git@gitlab.com:LutzGebelman/doomemacs-conf.git
