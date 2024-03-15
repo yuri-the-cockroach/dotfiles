@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "hyprland/window", "custom/spotify"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "network", "hyprland/language", "wireplumber"],
+    "modules-right": ["tray", "network", "custom/spacer", "battery", "custom/spacer", "wireplumber", "custom/spacer", "hyprland/language"],
     "hyprland/workspaces": {
         "persistent-workspaces": {
         },
@@ -47,9 +47,9 @@
         "format": "{}% "
     }, 
     "hyprland/language": {
-        "format-en": "EN",
-        "format-ru": "RU",
-        "format-he": "HE"
+        "format-en": " EN",
+        "format-ru": " RU",
+        "format-he": " HE"
     },
     "battery": {
         "bat": "BAT0",
@@ -58,24 +58,28 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
+        //"format": "fuck",
+        "format-discharging": "{capacity}% {icon}",
+        "format-charging": "{capacity}% {icon}",
+        "format-not-charging": "{capacity}% &#xf1834;",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": {
-            "format-discharging": ["&#xf10cd;", "&#xf007a;", "&#xf007b;", "&#xf007c;", "&#xf007d;", "&#xf007e;", "&#xf007f;", "&#xf0080;", "&#xf0081;", "&#xf0082;", "&#x0079;"],
-            "format-charging": ["&#xf089f;", "&#xf089c;", "&#xf0086;", "&#xf0087;", "&#xf0088;", "&#xf089d;", "&#xf0089;", "&#xf089e;", "&#xf008a;", "&#xf008b;", "&#xf0085;"]
-        }
+            "discharging": ["&#xf10cd;", "&#xf007a;", "&#xf007b;", "&#xf007c;", "&#xf007d;", "&#xf007e;", "&#xf007f;", "&#xf0080;", "&#xf0081;", "&#xf0082;", "&#x0079;"],
+            "charging": ["&#xf089f;", "&#xf089c;", "&#xf0086;", "&#xf0087;", "&#xf0088;", "&#xf089d;", "&#xf0089;", "&#xf089e;", "&#xf008a;", "&#xf008b;", "&#xf0085;"]
+        },
+        "interval": 1
     },
     "network": {
         // "interface": "wlp2s0", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ifname}: Up {bandwidthUpBits} | Down {bandwidthDownBits} ",
-        "format-disconnected": "Disconnected ⚠",
+        "format-wifi": "  {essid} ( &#xf01da; {bandwidthDownBits} | &#xf0552; {bandwidthUpBits} )",
+        "format-ethernet": " {ifname}: ( &#xf01da; {bandwidthDownBits} | &#xf0552; {bandwidthUpBits} )",
+        "format-disconnected": "⚠ Disconnected",
         "interval": 1
     },
     "wireplumber": {
         //"scroll-step": 1,
-        "format": " {volume}% {icon}",
+        "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
         "format-muted": "",
         "format-icons": {
@@ -94,5 +98,8 @@
         "interval": 30, // Remove this if your script is endless and write in loop
         "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
         "exec-if": "pgrep spotify"
+    },
+    "custom/spacer": {
+        "format": " | "
     }
 }
