@@ -62,8 +62,8 @@
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": {
-            "format-discharging": ["&#f10cd", "&#f007a", "&#f007b", "&#f007c", "&#f007d", "&#f007e", "&#f007f", "&#f0080", "&#f0081", "&#f0082", "&#0079"],
-            "format-charging": ["&#f089f", "&#f089c", "&#f0086", "&#f0087", "&#f0088", "&#f089d", "&#f0089", "&#f089e", "&#f008a", "&#f008b", "&#f0085"]
+            "format-discharging": ["&#xf10cd;", "&#xf007a;", "&#xf007b;", "&#xf007c;", "&#xf007d;", "&#xf007e;", "&#xf007f;", "&#xf0080;", "&#xf0081;", "&#xf0082;", "&#x0079;"],
+            "format-charging": ["&#xf089f;", "&#xf089c;", "&#xf0086;", "&#xf0087;", "&#xf0088;", "&#xf089d;", "&#xf0089;", "&#xf089e;", "&#xf008a;", "&#xf008b;", "&#xf0085;"]
         }
     },
     "network": {
@@ -85,7 +85,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "&#f089f000"]
+            "default": ["", "&#xf057e;"]
         },
     },
     "custom/spotify": {
