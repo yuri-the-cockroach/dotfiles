@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "hyprland/window", "custom/spotify"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "network", "custom/spacer", "battery", "custom/spacer", "wireplumber", "custom/spacer", "hyprland/language"],
+    "modules-right": ["tray", "group/net", "battery", "custom/spacer", "wireplumber", "custom/spacer", "hyprland/language"],
     "hyprland/workspaces": {
         "persistent-workspaces": {
         },
@@ -25,6 +25,12 @@
             "games": ""
         }
     },
+
+    "group/net": {
+        "modules": ["network#speed", "network"],
+        "orientation": "horizontal",
+    },
+
     "custom/capslock": {
         "format": "CAPS {}",
         "interval": 30,
@@ -53,15 +59,13 @@
     },
     "battery": {
         "bat": "BAT0",
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        //"format": "fuck",
-        "format-discharging": "{capacity}% {icon}",
-        "format-charging": "{capacity}% {icon}",
-        "format-not-charging": "{capacity}% &#xf1834;",
+        // "states": {
+        //     "good": 95,
+        //     "warning": 30,
+        //     "critical": 15
+        // },
+        "format": " | {icon} {capacity}%",
+        "format-not-charging": "&#xf1834; {capacity}%",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": {
@@ -72,15 +76,36 @@
     },
     "network": {
         // "interface": "wlp2s0", // (Optional) To force the use of this interface
-        "format-wifi": "  {essid} ( &#xf01da; {bandwidthDownBits} | &#xf0552; {bandwidthUpBits} )",
-        "format-ethernet": " {ifname}: ( &#xf01da; {bandwidthDownBits} | &#xf0552; {bandwidthUpBits} )",
+        "format-wifi": "  {essid}",
+        "format-ethernet": "󰈀 {ifname}",
         "format-disconnected": "⚠ Disconnected",
+        "interval": 1,
+
+    },
+
+    "network#speed": {
+        "format": "{bandwidthDownBits} &#xf01da; &#xf0552; {bandwidthUpBits}",
+        "format-disconnected": "",
+        "max-length": 20,
+        "min-length": 20,
+        "align": 0.5,
         "interval": 1
     },
+
+    // "network#down": {
+    //     "format": "{bandwidthDownBits} &#xf01da;",
+    //     "format-disconnected": "",
+    //     "max-length": 10,
+    //     "min-length": 10,
+    //     "align": 1,
+    //     "interval": 1
+    // },
+
+
     "wireplumber": {
         //"scroll-step": 1,
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
+        "format": "{icon} {volume}%",
+        "format-bluetooth": " {icon} {volume}%",
         "format-muted": "",
         "format-icons": {
             "headphones": "",

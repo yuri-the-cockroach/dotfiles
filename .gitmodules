@@ -1,6 +1,7 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = git@gitlab.com:LutzGebelman/nvim-conf.git
+	branch = master
 [submodule ".config/hypr"]
 	path = .config/hypr
 	url = git@gitlab.com:LutzGebelman/hypr-conf.git
