@@ -35,3 +35,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+
+if [[ $(ssh-add -l) == "The agent has no identities." ]]; then
+    ssh-add ~/.ssh/id_rsa
+fi
