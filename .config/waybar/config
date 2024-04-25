@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "hyprland/window", "custom/spotify"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "group/net", "battery", "custom/spacer", "wireplumber", "custom/spacer", "hyprland/language"],
+    "modules-right": ["tray", "hyprland/language", "wireplumber", "battery", "group/net" ],
     "hyprland/workspaces": {
         "persistent-workspaces": {
         },
@@ -87,7 +87,7 @@
     "network#speed": {
         "format": "{bandwidthDownBits} &#xf01da; &#xf0552; {bandwidthUpBits}",
         "format-disconnected": "",
-        "max-length": 20,
+        "max-length": 21,
         "min-length": 20,
         "align": 0.5,
         "interval": 1
