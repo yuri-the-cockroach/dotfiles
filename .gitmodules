@@ -1,13 +1,13 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
-	url = https://gitlab.com/LutzGebelman/nvim-conf
+	url = git@gitlab.com:LutzGebelman/nvim-conf.git
 	branch = master
 [submodule ".config/hypr"]
 	path = .config/hypr
-	url = https://gitlab.com/LutzGebelman/hypr-conf
+	url = git@gitlab.com:LutzGebelman/hypr-conf.git
 [submodule ".mozilla/firefox"]
 	path = .mozilla/firefox
-	url = https://gitlab.com/LutzGebelman/firefox-conf
+	url = git@gitlab.com:LutzGebelman/firefox-conf.git
 [submodule ".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
 	path = .oh-my-zsh/custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
@@ -16,4 +16,4 @@
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule ".doom.d"]
 	path = .doom.d
-	url = https://gitlab.com/LutzGebelman/doomemacs-conf
+	url = git@gitlab.com:LutzGebelman/doomemacs-conf.git
