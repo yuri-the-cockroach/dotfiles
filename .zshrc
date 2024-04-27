@@ -1,7 +1,6 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=/usr/local/bin:$PATH
-export PATH=$HOME/.local/bash:$PATH
-export PATH=$HOME/.local/bin:$PATH
+export PATH=~/.local/bin:$PATH
+export PATH=~/.local/bash:$PATH
 export XDG_DATA_HOME=~/.local/share
 export XDG_CONFIG_HOME=~/.config
 
