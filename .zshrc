@@ -3,6 +3,7 @@ export PATH=~/.local/bin:$PATH
 export PATH=~/.local/bash:$PATH
 export XDG_DATA_HOME=~/.local/share
 export XDG_CONFIG_HOME=~/.config
+export ZSH_HIGHLIGHT_DIRS_BLACKLIST=( /mnt/ftp )
 
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="nvim"
@@ -23,13 +24,14 @@ alias cat="bat"
 alias du="du -h --max-depth=1"
 alias feh="/usr/bin/feh --scale-down"
 alias diary="diary ~/notes/mood-diary/"
+alias grep='rg'
 
 if [[ $TERM == "alacritty" ]]; then
-    neofetch
+    fastfetch
 fi
 
 plugins=(
-    zsh-autosuggestions
+    # zsh-autosuggestions
     zsh-syntax-highlighting
 )
 
@@ -38,3 +40,5 @@ source $ZSH/oh-my-zsh.sh
 if [[ $(ssh-add -l) == "The agent has no identities." ]]; then
     ssh-add ~/.ssh/id_rsa
 fi
+
+
