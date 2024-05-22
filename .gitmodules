@@ -5,6 +5,7 @@
 [submodule ".config/hypr"]
 	path = .config/hypr
 	url = git@gitlab.com:LutzGebelman/hypr-conf.git
+	branch = master
 [submodule ".mozilla/firefox"]
 	path = .mozilla/firefox
 	url = git@gitlab.com:LutzGebelman/firefox-conf.git
