@@ -1,9 +1,9 @@
 if status is-interactive
-    export PATH="~/.local/bin:$PATH"
-    export PATH="~/.local/bash:$PATH"
-    export XDG_DATA_HOME=~/.local/share
-    export XDG_CONFIG_HOME=~/.config
-    export EDITOR=nvim
+    set PATH "~/.local/bin:$PATH"
+    set PATH "~/.local/bash:$PATH"
+    set XDG_DATA_HOME "~/.local/share"
+    set XDG_CONFIG_HOME "~/.config"
+    set -x EDITOR nvim
     set fish_greeting
     set __fish_git_prompt_showcolorhints true
     set __fish_git_prompt_show_informative_status true
