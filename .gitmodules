@@ -6,13 +6,10 @@
 	path = .config/hypr
 	url = git@gitlab.com:LutzGebelman/hypr-conf.git
 	branch = master
-[submodule ".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
-	path = .oh-my-zsh/custom/plugins/zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions
-[submodule ".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
-	path = .oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule ".doom.d"]
 	path = .doom.d
 	url = git@gitlab.com:LutzGebelman/doomemacs-conf.git
 	branch = master
+[submodule ".mozilla/firefox-conf"]
+	path = .mozilla/firefox
+	url = git@gitlab.com/yuri-the-cockroach/firefox-conf.git
