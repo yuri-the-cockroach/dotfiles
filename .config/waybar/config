@@ -1,12 +1,16 @@
 {
     "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar at the bottom of your screen
-    "height": 26, // Waybar height
+    "fixed-center": true,
+    "output": "DP-1",
+    "position": "bottom", // Waybar at the bottom of your screen
+    "height": 30, // Waybar height
     // "width": 1366, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces", "hyprland/window", "custom/spotify"],
-    "modules-center": ["clock"],
-    "modules-right": ["tray", "hyprland/language", "wireplumber", "battery", "group/net" ],
+    "margin-left": 0,
+    "margin-right": 0,
+    "modules-left": ["hyprland/workspaces", "custom/spotify" ],
+    "modules-center": [ "group/clock", ],
+    "modules-right": [ "tray", "custom/delim",  "hyprland/language", "custom/delim", "group/volume", "battery", "custom/delim", "group/pc-stats" ],
     "hyprland/workspaces": {
         "persistent-workspaces": {
         },
@@ -26,8 +30,28 @@
         }
     },
 
+    "hyprland/window": {
+        "align": 0,
+        "format": "{class}",
+        "max-length": 30,
+        "min-length": 30
+    },
+
+    "group/pc-stats": {
+        "modules": [ "group/cpu-temp", "custom/delim", "group/ram", "custom/delim", "group/net" ],
+        "orientation": "horizontal",
+    },
+
+    "temperature#CPU": {
+        "hwmon-path": ["/sys/class/hwmon/hwmon2/temp2_input", "/sys/class/thermal/thermal_zone0/temp"],
+        "thermal-zone": 2,
+        "critical-threshold": 80,
+        "format-critical": "{temperatureC}°C ",
+        "format": "{temperatureC}°C "
+    },
+
     "group/net": {
-        "modules": ["network#speed", "network"],
+        "modules": ["network#down", "network#up", "custom/delim", "network#name"],
         "orientation": "horizontal",
     },
 
@@ -43,19 +67,58 @@
         // "icon-size": 21,
         "spacing": 10
     },
+
     "clock": {
         "format": "{:%Y-%m-%d  |  %a  |  %H:%M}"
     },
+
+    "clock#date": {
+        "format": "{:%Y-%m-%d}"
+    },
+
+    "clock#week": {
+        "format": "{:%a}"
+    },
+
+    "clock#time": {
+        "format": "{:%H:%M}"
+    },
+
+    "group/clock": {
+        "modules": [ "clock#date", "custom/delim", "clock#week", "custom/delim", "clock#time" ],
+        "orientation": "horizontal"
+    },
+    
+    "group/cpu-temp": {
+        "modules": ["custom/text#CPU", "temperature#CPU" ],
+        "orientation": "horizontal",
+    },
+
     "cpu": {
         "format": "{usage}% "
     },
+
+    "group/ram": {
+        "modules": ["custom/text#RAM", "memory" ],
+        "orientation": "horizontal",
+    },
+
     "memory": {
-        "format": "{}% "
+        "format": "{used}GB / {total}GB ",
+        "states": {
+            "warn": 75,
+            "critical": 95
+        },
+        "max-length": 16,
+        "min-length": 16,
+        "interval": 1
     }, 
+
     "hyprland/language": {
-        "format-en": " EN",
-        "format-ru": " RU",
-        "format-he": " HE"
+        "format": "{}",
+        "format-en": "En",
+        "format-ru": "Ru",
+        "format-he": "He"
     },
     "battery": {
         "bat": "BAT0",
@@ -75,7 +138,7 @@
         },
         "interval": 1
     },
-    "network": {
+    "network#name": {
         // "interface": "wlp2s0", // (Optional) To force the use of this interface
         "format-wifi": "  {essid}",
         "format-ethernet": "󰈀 {ifname}",
@@ -87,45 +150,74 @@
     "network#speed": {
         "format": "{bandwidthDownBits} &#xf01da; &#xf0552; {bandwidthUpBits}",
         "format-disconnected": "",
-        "max-length": 21,
+        "max-length": 20,
         "min-length": 20,
         "align": 0.5,
         "interval": 1
     },
 
-    // "network#down": {
-    //     "format": "{bandwidthDownBits} &#xf01da;",
-    //     "format-disconnected": "",
-    //     "max-length": 10,
-    //     "min-length": 10,
-    //     "align": 1,
-    //     "interval": 1
-    // },
-
-
-    "wireplumber": {
-        //"scroll-step": 1,
-        "format": "{icon} {volume}%",
-        "format-bluetooth": " {icon} {volume}%",
-        "format-muted": "",
-        "format-icons": {
-            "headphones": "",
-            "handsfree": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "&#xf057e;"]
-        },
+    "network#down": {
+        "format": "{bandwidthDownBits} &#xf01da;",
+        "format-disconnected": "",
+        "max-length": 10,
+        "min-length": 10,
+        "align": 1,
+        "interval": 1
     },
+
+    "network#up": {
+        "format": "&#xf0552; {bandwidthUpBits}",
+        "format-disconnected": "",
+        "max-length": 10,
+        "min-length": 10,
+        "align": 0,
+        "interval": 1
+    },
+
+    "group/volume": {
+        "modules": [ "custom/text#VOL", "wireplumber#danumber" ],
+        "orientation": "horizontal"
+    },
+
+    "wireplumber#danumber": {
+        "align": 1,
+        "format": "{volume}% ",
+        "min-length": 5,
+        "max-length": 5,
+    },
+
     "custom/spotify": {
-        "format": " {}",
-        "max-length": 40,
-        "interval": 30, // Remove this if your script is endless and write in loop
+        "align": 0,
+        "format": "{}",
+        "max-length": 48,
+        "min-length": 48,
+        "interval": 1, // Remove this if your script is endless and write in loop
         "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
-        "exec-if": "pgrep spotify"
     },
     "custom/spacer": {
-        "format": " | "
+        "format": " ",
+        "max-length": 46,
+        "min-length": 46
+    },
+
+    "custom/delim": {
+        "format": "|",
+    },
+
+    "custom/delim#HC": {
+        "format": "|",
+    },
+
+    "custom/text#CPU": {
+        "format": "CPU:"
+    },
+
+    "custom/text#RAM": {
+        "format": "RAM:"
+    },
+
+    "custom/text#VOL": {
+        "format": "  ",
+        "align": 0
     }
 }

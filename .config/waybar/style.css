@@ -2,12 +2,12 @@
     border: none;
     border-radius: 0;
     font-family: "UbuntuNerdFont";
-    font-size: 13px;
+    font-size: 14px;
     min-height: 0;
 }
 
 window#waybar {
-    background: transparent;
+    background: #080808;
     color: white;
 }
 
@@ -38,13 +38,28 @@ window#waybar {
     border-bottom: 3px solid white;
 }
 
-#clock, #battery, #cpu, #memory, #network, #wireplumber, #custom-spotify, #tray, #mode {
+#clock, #battery, #cpu, #custom-text, #custom-spotify, #tray, #mode{
     padding: 0 3px;
     margin: 0 2px;
 }
 
+#custom-text.VOL {
+    padding: 0 0px;
+    margin: 0 0px;
+}
+
+#custom-delim {
+    margin: 0 2px;
+    color: #696969;
+}
+
+#custom-delim.HC {
+    margin: 0 2px;
+    color: #ffffff;
+}
+
 #clock {
-    font-weight: bold;
+    font-weight: 500;
 }
 
 #battery {
@@ -79,22 +94,57 @@ window#waybar {
 #memory {
 }
 
-#network {
+#language {
+    padding: 0 2px;
+    margin: 0 2px;
+    font-weight: 500;
+    /* color: #eeeeee; */
 }
 
+#network.name {
+    padding: 0 2px;
+    margin: 0 2px;
+}
+
+#network.up {
+    color: #f157fb;
+}
+
+#network.down {
+    color: #8298ff;
+}
 #network.disconnected {
     background: #f53c3c;
 }
 
-#wireplumber{
+#temperature {
+    color: #22cc22;
+    font-weight: 500;
 }
 
-#wireplumber.muted {
+#temperature.critical {
+    color: #ff2222;
+}
+
+#memory {
+    font-weight: 500;
+}
+
+#memory.warn {
+    color: #ffff22;
+}
+
+#memory.critical {
+    color: #ff2222;
 }
 
 #custom-spotify {
-    color: rgb(102, 220, 105);
 }
 
 #tray {
+}
+
+#wireplumber {
+    margin: 0 0px;
+    padding: 0 0px;
 }
