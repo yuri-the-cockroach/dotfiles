@@ -1,7 +1,7 @@
 {
     "layer": "top", // Waybar at top layer
     "fixed-center": true,
-    "output": "DP-1",
+    // "output": "DP-1",
     "position": "bottom", // Waybar at the bottom of your screen
     "height": 30, // Waybar height
     // "width": 1366, // Waybar width
@@ -159,8 +159,8 @@
     "network#down": {
         "format": "{bandwidthDownBits} &#xf01da;",
         "format-disconnected": "",
-        "max-length": 10,
-        "min-length": 10,
+        "max-length": 11,
+        "min-length": 11,
         "align": 1,
         "interval": 1
     },
@@ -168,8 +168,8 @@
     "network#up": {
         "format": "&#xf0552; {bandwidthUpBits}",
         "format-disconnected": "",
-        "max-length": 10,
-        "min-length": 10,
+        "max-length": 11,
+        "min-length": 11,
         "align": 0,
         "interval": 1
     },
