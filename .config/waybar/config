@@ -44,6 +44,7 @@
 
     "temperature#CPU": {
         "hwmon-path": ["/sys/class/hwmon/hwmon2/temp2_input", "/sys/class/thermal/thermal_zone0/temp"],
+        "interval": 1,
         "thermal-zone": 2,
         "critical-threshold": 80,
         "format-critical": "{temperatureC}°C ",
@@ -68,10 +69,6 @@
         "spacing": 10
     },
 
-    "clock": {
-        "format": "{:%Y-%m-%d  |  %a  |  %H:%M}"
-    },
-
     "clock#date": {
         "format": "{:%Y-%m-%d}"
     },
@@ -90,12 +87,16 @@
     },
     
     "group/cpu-temp": {
-        "modules": ["custom/text#CPU", "temperature#CPU" ],
+        "modules": ["custom/text#CPU", "cpu", "temperature#CPU" ],
         "orientation": "horizontal",
     },
 
     "cpu": {
-        "format": "{usage}% "
+        "max-length": 10,
+        "min-length": 10,
+        "interval": 1,
+        "format": "{max_frequency}GHz @ ",
+        "align": 1
     },
 
     "group/ram": {
@@ -109,6 +110,7 @@
             "warn": 75,
             "critical": 95
         },
+        "align": 1,
         "max-length": 16,
         "min-length": 16,
         "interval": 1
@@ -209,11 +211,13 @@
     },
 
     "custom/text#CPU": {
-        "format": "CPU:"
+        "format": " CPU:",
+        "align": 1
     },
 
     "custom/text#RAM": {
-        "format": "RAM:"
+        "format": " RAM:",
+        "align": 1
     },
 
     "custom/text#VOL": {
