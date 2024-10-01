@@ -17,6 +17,9 @@ style = "Italic"
 family = "Roboto Mono"
 style = "Medium"
 
+# 
+# גש
+
 # Default colors
 [colors.primary]
 background = '#181818'
@@ -47,3 +50,7 @@ blue    = '#3333ff'
 magenta = '#ff00ff'
 cyan    = '#6ae3f9'
 white   = '#ffffff'
+
+[debug]
+renderer = "glsl3"
+log_level = "Info"
