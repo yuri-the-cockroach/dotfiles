@@ -18,7 +18,7 @@ if status is-interactive
     alias l="ls -lha"
     alias b=btop
     alias e="emacsclient -nw -r"
-    alias cat=bat
+    alias cat="bat -p"
     alias pacman="sudo pacman"
     alias yeet="pacman -Rns"
     alias pwt=pw-top
